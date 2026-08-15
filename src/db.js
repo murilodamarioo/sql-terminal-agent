@@ -1,6 +1,6 @@
 import { DatabaseSync } from 'node:sqlite'
 
-function connectToDatabase(path = ':memory:') {
+export function connectToDatabase(path = ':memory:') {
   const database = new DatabaseSync(path)
 
   database.exec(`

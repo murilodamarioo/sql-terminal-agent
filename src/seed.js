@@ -89,6 +89,6 @@ while (count <= maxRecords) {
 stream.end(() => {
   const { size } = statSync(LOG_FILE)
   console.log(
-    chalk.green(`Generation Complete. Register: ${count.toLocaleString()}, File size: ${convertFromByteToGB(size)} GB`)
+    chalk.green(`Generation Complete. Registers: ${count.toLocaleString()}, File size: ${convertFromByteToGB(size)} GB`)
   )
 })

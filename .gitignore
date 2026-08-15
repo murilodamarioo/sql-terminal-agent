@@ -4,3 +4,4 @@ node_modules/
 !.env.example
 
 access_logs.db
+access.log

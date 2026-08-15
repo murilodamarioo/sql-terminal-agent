@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "db": "node src/db.js",
-    "seed": "node src/seed.js"
+    "seed": "node src/seed.js",
+    "ingest": "node src/ingest.js"
   },
   "license": "ISC",
   "type": "module",
