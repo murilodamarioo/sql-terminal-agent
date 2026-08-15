@@ -93,7 +93,30 @@ export async function generateSqlObject(question) {
   };
 }
 
-const { sql, explanation } = await generateSqlObject('How many access we have per location')
+export async function generateTextAnswer({ question, sql, rows }) {
+  const { text } = await generateText({
+    model,
+    system: `
+      Answer in English, concisely and only based on the returned data.
+      If the result is empty, say so clearly.
+    `,
+    prompt: `
+      Original question:
+      ${question}
 
-console.log('Generated SQL: ', sql),
-console.log('Explanation: ', explanation)
+      Executed SQL:
+      ${sql}
+
+      Returned rows in JSON:
+      ${JSON.stringify(rows ?? [], null, 2)}
+
+      Answer:
+    `,
+  });
+
+  return text.trim();
+}
+
+export async function generateAnswer({ question, sql, rows }) {
+  return generateTextAnswer({ question, sql, rows });
+}

@@ -1,8 +1,9 @@
 {
   "name": "sql-terminal-agent",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
+    "start": "NODE_NO_WARNINGS=1 node --env-file=.env.local src/index.js",
+    "dev": "NODE_NO_WARNINGS=1 node --env-file=.env.local --watch src/index.js",
     "db": "node src/db.js",
     "seed": "node src/seed.js",
     "ingest": "node src/ingest.js",
