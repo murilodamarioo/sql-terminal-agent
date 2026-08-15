@@ -5,7 +5,8 @@
   "scripts": {
     "db": "node src/db.js",
     "seed": "node src/seed.js",
-    "ingest": "node src/ingest.js"
+    "ingest": "node src/ingest.js",
+    "env:setup": "cp .env.example .env.local"
   },
   "license": "ISC",
   "type": "module",
